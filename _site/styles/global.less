@@ -1,0 +1,33 @@
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  .base-font;
+  align-items: center;
+  background-color: @c-background;
+  color: @c-foreground;
+  display: flex;
+  font-size: 14px;
+  justify-content: center;
+  line-height: 1.4;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+}
+
+a {
+  border-bottom: 1px solid rgba(red(@c-foreground), green(@c-foreground), blue(@c-foreground), 0.4);
+  color: @c-foreground;
+  display: inline-block;
+  text-decoration: none;
+  transition: border 0.3s ease-in-out;
+
+  &:active,
+  &:focus,
+  &:hover {
+    border-bottom-color: @c-foreground;
+  }
+}

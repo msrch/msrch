@@ -1,0 +1,186 @@
+@side: 500px;
+@side-half: @side / 2;
+@side-inner: @side * 0.75;
+@square-side: sqrt(@side-half * @side-half * 2);
+@mq-break-point: (@side + 20);
+
+.Container {
+  height: @side;
+  opacity: @content-opacity;
+  position: relative;
+  width: @side;
+  z-index: 10;
+
+  &-square,
+  &-content {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+  }
+
+  &-square {
+    border: 1px solid @c-foreground;
+    display: block;
+    height: @square-side;
+    margin-left: @square-side / -2;
+    margin-top: @square-side / -2;
+    transform: rotate(45deg);
+    transform-origin: 50% 50%;
+    width: @square-side;
+  }
+
+  &-content {
+    height: @side-inner;
+    margin-left: @side-inner / -2;
+    margin-top: @side-inner / -2;
+    width: @side-inner;
+  }
+}
+
+.Card {
+  align-items: stretch;
+  display: flex;
+  flex-direction: column;
+
+  &-header,
+  &-body,
+  &-footer {
+    display: flex;
+    flex-basis: percentage(1 / 3);
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: center;
+  }
+
+  &-header {
+    align-items: flex-end;
+    font-size: 80px;
+  }
+
+  &-body {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &-footer {
+    align-items: flex-end;
+    font-size: 16px;
+
+    > dl {
+
+      div {
+        display: flex;
+        margin-bottom: 0.8em;
+      }
+
+      dt {
+        width: 1em;
+      }
+
+      dd {
+        margin-left: 0.5em;
+        margin-right: 0.75em;
+      }
+    }
+  }
+
+  &-logo {
+    margin-bottom: 10px;
+  }
+
+  &-title,
+  &-subTite {
+    line-height: 1;
+    margin: 0;
+    text-align: center;
+  }
+
+  &-title {
+    .base-font-bold;
+    font-size: 56px;
+    margin: 30px 0 5px 0;
+  }
+
+  &-subTitle {
+    font-size: 28px;
+  }
+}
+
+.Bg {
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-name: jitter;
+  background-position: center;
+  background-size: cover;
+  display: block;
+  height: 100%;
+  left: 0;
+  opacity: 0.7;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  &--frame01 {
+    background-image: url('../imgs/01.svg');
+  }
+
+  &--frame02 {
+    animation-delay: 50ms;
+    background-image: url('../imgs/02.svg');
+  }
+
+  &--frame03 {
+    animation-delay: 100ms;
+    background-image: url('../imgs/03.svg');
+  }
+
+  &--frame04 {
+    animation-delay: 150ms;
+    background-image: url('../imgs/04.svg');
+  }
+
+  &--frame05 {
+    animation-delay: 200ms;
+    background-image: url('../imgs/05.svg');
+  }
+
+  &--frame06 {
+    animation-delay: 250ms;
+    background-image: url('../imgs/06.svg');
+  }
+
+  &--frame07 {
+    animation-delay: 300ms;
+    background-image: url('../imgs/07.svg');
+  }
+
+  &--frame08 {
+    animation-delay: 350ms;
+    background-image: url('../imgs/08.svg');
+  }
+
+  &--frame09 {
+    animation-delay: 400ms;
+    background-image: url('../imgs/09.svg');
+  }
+
+  &--frame10 {
+    animation-delay: 450ms;
+    background-image: url('../imgs/10.svg');
+  }
+}
+
+@keyframes jitter {
+
+  95% {
+    z-index: 1;
+  }
+}
+
+@media (max-width: @mq-break-point), (max-height: @mq-break-point) {
+
+  .Container {
+    transform: scale(0.7);
+    transform-origin: 50% 50%;
+  }
+}

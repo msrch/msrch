@@ -1,0 +1,13 @@
+*.diff
+*.err
+*.swo
+*.swp
+*.vi
+*~
+.DS_Store
+._*
+.npmrc
+.tern-port
+dist
+node_modules
+npm-debug.log
